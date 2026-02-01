@@ -20,6 +20,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Debug google-services.json
+        run: |
+          echo "---- FILE SIZE ----"
+          ls -lh android/app/google-services.json
+          echo "---- FIRST 5 LINES ----"
+          head -n 5 android/app/google-services.json
+          echo "---- LAST 5 LINES ----"
+          tail -n 5 android/app/google-services.json
 
       - name: Setup Java
         uses: actions/setup-java@v4

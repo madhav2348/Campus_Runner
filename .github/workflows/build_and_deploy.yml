@@ -20,9 +20,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Detect BOM
-        run: |
-          head -c 3 android/app/google-services.json | xxd
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
@@ -75,7 +72,7 @@ jobs:
         uses: ncipollo/release-action@v1.14.0
         with:
           allowUpdates: true
-          artifacts: build/app/outputs/flutter-apk/app-release.apk
+          artifacts: ${{ env.APK_PATH }}
           artifactContentType: apk
           generateReleaseNotes: true
           tag: latest_build

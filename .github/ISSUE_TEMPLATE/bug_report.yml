@@ -1,4 +1,4 @@
-name: 🐛 Bug Report
+name: "🐛 Bug Report"
 description: Report a bug or issue with the RunAnywhere SDKs
 title: "[Bug]: "
 labels: ["bug"]
@@ -36,8 +36,8 @@ body:
       description: What you expected to happen
     validations:
       required: true
-      
- - type: textarea
+
+  - type: textarea
     id: current
     attributes:
       label: Current Behavior
